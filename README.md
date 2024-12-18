@@ -1,4 +1,4 @@
-sdA movie management application backend API part using springboot Functionality
+A movie management application front end part using react
 
 1.Add a movie to the list
 
