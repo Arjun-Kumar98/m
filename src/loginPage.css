@@ -1,0 +1,40 @@
+.App {
+    text-align: center;
+  }
+  
+ 
+  
+  .App-header {
+    background-color: #093545;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  
+  .App-link {
+    color: #61dafb;
+  }
+  input{
+  border-radius: 8px;
+  border-color: blue;
+  background-color: #224957;
+  padding: 10px;
+ width:40%;
+  height: 100%;
+  }
+  .login-button{
+    border-radius: 8px;
+    border-color: white;
+    color: white;
+    background-color: lightgreen;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+
+  }
+ 
+  

@@ -1,0 +1,105 @@
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #093545; 
+}
+
+.movie-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 120vh; 
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Header at the Top */
+.header {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+  flex-grow: 1; 
+}
+
+/* Movie Cards */
+.movie-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 80%;
+  background-color: #0a3947;
+  text-align: center;
+}
+
+.movie-poster {
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  border-bottom: 1px solid #ccc;
+}
+
+.movie-info {
+  color: white;
+  padding: 10px;
+  text-align: left;
+
+}
+
+/* Add New Button */
+.add-new-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2BD17E;
+  cursor: pointer;
+}
+
+.add-new-card h3 {
+  color: white;
+  font-size: 18px;
+}
+
+/* Pagination at the Bottom */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.pagination button {
+  background-color: #2BD17E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #1d9c57;
+}
+
+.pagination button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  color: white;
+  font-size: 16px;
+}
