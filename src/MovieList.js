@@ -37,6 +37,7 @@ function MovieList() {
   };
 
   const logout = () =>{
+    localStorage.clear("token");
     navigate('/');
   }
   useEffect(() => {
