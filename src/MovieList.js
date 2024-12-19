@@ -9,7 +9,7 @@ function MovieList() {
     const [page, setPage] = useState(0); // Current page
     const [totalPages, setTotalPages] = useState(1); // Total pages
     const pageSize = 8; // Number of movies per page
-    const { config } = useConfig();
+    const {config} = useConfig();
     const token = localStorage.getItem('token');
     const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ function MovieList() {
         } catch (error) {
             console.error("Error fetching movies:", error);
         }
-    }, [API_URL, token]); // Include API_URL and token in the dependency array
+    }, [config.API_URL, token]); // Include API_URL and token in the dependency array
 
     const logout = () => {
         localStorage.clear("token");

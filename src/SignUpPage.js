@@ -38,6 +38,7 @@ function SignUpPage() {
         try {
           
 
+
             const response = await axios.post(`${config.API_URL}/user/registerUser`, payload);
             if (response.status === 200) {
                 alert("User registered successfully!");

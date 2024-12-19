@@ -9,7 +9,7 @@ function AddMovie() {
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const navigate = useNavigate();
-  const { API_URL } = useConfig();
+    const { config } = useConfig(); 
 
 
  const currentYear = new Date().getFullYear();
@@ -35,7 +35,7 @@ function AddMovie() {
     formData.append("year", year);
 
       try {
-          await axios.post(`${API_URL}/movie/registerMovie`, formData, {
+          await axios.post(`${config.API_URL}/movie/registerMovie`, formData, {
         headers: {
           'Authorization': `Bearer ${token}`, 
         },

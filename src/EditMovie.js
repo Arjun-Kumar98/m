@@ -29,7 +29,8 @@ function EditMovie() {
     const fetchMovieDetails = async()=>{
 
     try {
-        const response = await axios.get(`${config.API_URL }/movie/getMovie`,{
+
+        const response = await axios.get(`${config.API_URL}/movie/getMovie`, {
         params:{
           movieId:movieId
         },
@@ -45,7 +46,7 @@ function EditMovie() {
   };
 
       fetchMovieDetails();
-  }, [movieId, API_URL]);
+  }, [movieId, config.API_URL]);
 
 
 const onSubmit = async (e) => {
