@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import useConfig  from './hooks/useConfig';
 import './newMovie.css';
 
 function EditMovie() {
@@ -9,7 +10,8 @@ function EditMovie() {
   const[movie,setMovie] = useState({});
   const [field1, setField1] = useState('');
   const [field2, setField2] = useState('');
-  const[imageRemoved,setImageRemoved] = useState(false);
+  const [imageRemoved, setImageRemoved] = useState(false);
+  const { config } = useConfig();
   const token = localStorage.getItem("token");
   const navigate = useNavigate();
  const{movieId} = useParams();
@@ -27,7 +29,7 @@ function EditMovie() {
     const fetchMovieDetails = async()=>{
 
     try {
-  const response =    await axios.get("http://localhost:8080/movie/getMovie",{
+        const response = await axios.get(`${config.API_URL }/movie/getMovie`,{
         params:{
           movieId:movieId
         },
@@ -42,8 +44,8 @@ function EditMovie() {
     }
   };
 
-  fetchMovieDetails();
-},[movieId]);
+      fetchMovieDetails();
+  }, [movieId, API_URL]);
 
 
 const onSubmit = async (e) => {
@@ -62,7 +64,7 @@ const onSubmit = async (e) => {
   formData.append("year", field2);
 
   try {
-    await axios.put('http://localhost:8080/movie/updateMovie', formData, {
+      await axios.put(`${config.API_URL } /movie/updateMovie`, formData, {
       headers: {
         'Authorization': `Bearer ${token}`, 
       },

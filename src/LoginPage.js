@@ -1,10 +1,12 @@
 import './loginPage.css'
 import React,{useState} from 'react';
 import axios from 'axios';
+import useConfig  from './hooks/useConfig';
 import { useNavigate } from 'react-router-dom';
 function LoginPage(){
 const [emailId,setEmailId] = useState('');
-const[password,setPassword]=useState('');
+const [password, setPassword] = useState('');
+ const { config } = useConfig();
 
 const navigate = useNavigate();
 
@@ -25,14 +27,14 @@ alert("Please Enter a valid email Id");
 return;
   }
 try{
-  const response = await axios.get('http://localhost:8080/user/loginUser',{params:{
+    const response = await axios.get(`${config.API_URL}/user/loginUser`,{params:{
 emailid:emailId,
 password:password
   },
 });
   if(response.status === 200){
     const message = response.data.message;
-if(message=="success"){
+if(message==="success"){
     const token = response.data.token;
     const userId = response.data.userId;
     alert("User has logged in successfully");

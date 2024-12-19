@@ -1,6 +1,7 @@
-import React, { use, useState } from 'react';
+import React, {  useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import useConfig  from './hooks/useConfig';
 import './newMovie.css';
 
 function AddMovie() {
@@ -8,7 +9,7 @@ function AddMovie() {
   const [title, setTitle] = useState('');
   const [year, setYear] = useState('');
   const navigate = useNavigate();
-
+  const { API_URL } = useConfig();
 
 
  const currentYear = new Date().getFullYear();
@@ -33,8 +34,8 @@ function AddMovie() {
     formData.append("userId",localStorage.getItem("userId"))
     formData.append("year", year);
 
-    try {
-      await axios.post('http://localhost:8080/movie/registerMovie', formData, {
+      try {
+          await axios.post(`${API_URL}/movie/registerMovie`, formData, {
         headers: {
           'Authorization': `Bearer ${token}`, 
         },
