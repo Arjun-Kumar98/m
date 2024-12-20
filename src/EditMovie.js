@@ -46,7 +46,7 @@ function EditMovie() {
   };
 
       fetchMovieDetails();
-  }, [movieId, config.API_URL]);
+  }, [movieId, config]);
 
 
 const onSubmit = async (e) => {
@@ -65,7 +65,7 @@ const onSubmit = async (e) => {
   formData.append("year", field2);
 
   try {
-      await axios.put(`${config.API_URL } /movie/updateMovie`, formData, {
+      await axios.put(`${config.API_URL }/movie/updateMovie`, formData, {
       headers: {
         'Authorization': `Bearer ${token}`, 
       },
@@ -75,7 +75,8 @@ const onSubmit = async (e) => {
   } catch (err) {
     console.error(err);
     alert('Error uploading data');
-  }
+    }
+
 };
   return (
     <div className="upload-container">

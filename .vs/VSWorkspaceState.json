@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\amplify",
+    "\\amplify\\#current-cloud-backend",
+    "\\amplify\\#current-cloud-backend\\awscloudformation",
+    "\\amplify\\#current-cloud-backend\\hosting",
+    "\\amplify\\#current-cloud-backend\\hosting\\amplifyhosting",
+    "\\amplify\\.config",
+    "\\amplify\\hooks",
+    "\\src",
+    "\\src\\hooks"
+  ],
+  "PreviewInSolutionExplorer": false
+}
