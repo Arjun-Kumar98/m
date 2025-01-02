@@ -40,11 +40,11 @@ function AddMovie() {
           'Authorization': `Bearer ${token}`, 
         },
       });
-      alert('Data uploaded successfully!');
+      alert('The movie has been registered successfully!');
       navigate('/movieList');
     } catch (err) {
       console.error(err);
-      alert('Error uploading data');
+      alert('Unable to register the movie');
     }
   };
 
